@@ -13,3 +13,98 @@
  *= require_tree .
  *= require_self
  */
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	padding-top: 100px;
+}
+
+.loginOuter{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.loginContainer{
+	border: 1px solid grey;
+	width: 25%;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 250px;
+	background-color: white;
+}
+
+#navbar-link-signup, #navbar-link-login{
+	text-decoration: none;
+	background-color: #ff5733;
+	padding: 5px;
+	border-radius: 4%;
+	margin-left: 10px;
+	color: white;
+
+}
+
+.outerField{
+	display: flex;
+	width: 100%;
+    margin: 8px 0;
+    border: 0px solid #ccc;
+    border-bottom: 1px solid grey;
+    box-sizing: border-box;
+    padding-bottom: 5px;
+}
+
+#user_email, #user_password, #user_password_confirmation{
+	border: 0px solid #ccc;
+	margin-left: 5px;
+}
+
+.actions > input{
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.actions > input:hover {
+    background-color: #45a049;
+}
+
+.authenticate{
+	display: flex;
+	flex-direction: row-reverse;
+	background-color: yellow;
+}
+
+#navbar-link-signup:hover, #navbar-link-login:hover{
+	box-shadow: 0px 0px 10px grey;
+}
+
+.bg{
+	background-image: url("http://hq-oboi.ru/photo/dobro_pozhalovat_v_ray_letnie_na_rabochiy_stol_2560x1600.jpg");
+	background-repeat: no-repeat;
+	background-size: 1301px 655px;
+}
+
+.header{
+	padding: 10px;
+	position: fixed;
+	top: 5px;
+	width: 99%;
+	background-color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
