@@ -27,7 +27,7 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	height: 78vh;
 }
 
 .loginContainer{
@@ -107,4 +107,167 @@ body{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+
+.links{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+    background-color: #333;
+    display: flex;
+}
+
+.links > li {
+    border-right:1px solid #bbb;
+}
+
+.links > li:last-child {
+	border-right: none;
+}
+
+.links > li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.links > li a:hover:not(.active) {
+    background-color: #111;
+    cursor: pointer;
+}
+
+.active {
+	background-color: #4CAF50;
+}
+
+.profile_container, .content_container{
+	display: flex;
+	justify-content: space-around;
+}
+
+.main_content > section{
+	width: 100%;
+}
+
+.main_content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	width: 80%;
+	border: 1px solid blue;
+}
+.profile{
+	border: 1px solid grey;
+	margin: 20px;
+	width: 80%;
+	border-top-left-radius: 6em;
+	border-bottom-left-radius: 6em;
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.avatar, .avatar > img{
+	border-radius: 100%;
+	border: 1px solid grey;
+	background-color: yellow;
+	height: 140px;
+	width: 140px;
+}
+
+.details{
+	width: 80%;
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+}
+
+.content{
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.profile_links{
+	width: 20%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.name{
+	padding-top: 15px;
+}
+
+.designation{
+	padding: 5px;
+}
+
+.name > span{
+	font-size: 50px;
+	color: black;
+
+}
+
+.designation > span{
+	font-size: 20px;
+	color: grey;
+}
+
+#edit_profile{
+	display: flex;
+	justify-content: flex-end;
+}
+
+#links{
+	display: flex;
+	justify-content: space-between;
+}
+
+#links > a:hover{
+	background-color: white;
+}
+
+.external_links, .education, .skills, .about{
+	background-color: grey;
+	padding: 10px;
+}
+
+.external_links_head, .education_head, .skills_head, .about_head{
+	background-color: yellow;
+	display: flex;
+	justify-content: space-between;
+	padding: 5px;
+
+}
+
+#external_links_head_image, #class_10_head_image, #class_12_head_image, #college_head_image, #skills_head_image, #about_head_image{
+	height: 40px;
+	width: 40px;
+}
+
+
+#external_links_content_field, #external_links_content_value, #external_links_content_submit, 
+#class_10_content_field, #class_10_content_value, #class_10_content_submit, 
+#class_12_content_field, #class_12_content_value, #class_12_content_submit, 
+#college_content_field, #college_content_value, #college_content_submit,
+#skills_content_field, #skills_content_value, #skills_content_submit,
+#about_content_field, #about_content_value, #about_content_submit{
+	display: none;
+} 
+
+.external_links_content, .class_10_content, .class_12_content, .college_content, .skills_content, .about_content{
+	background-color: white;
+}
+
+.class_10, .class_12, .college{
+	width: 95%;
+}
+
+.section_heading{
+	font-size: 20px;
 }

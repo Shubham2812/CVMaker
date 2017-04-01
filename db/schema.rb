@@ -11,7 +11,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170328191843) do
+ActiveRecord::Schema.define(version: 20170401181950) do
+
+  create_table "abouts", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "field"
+    t.string   "value"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "educations", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "tag"
+    t.string   "field"
+    t.string   "value"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "links", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "field"
+    t.string   "value"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "personal_details", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "gender"
+    t.date     "dob"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "city"
+    t.string   "pin"
+    t.string   "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "field"
+    t.string   "value"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

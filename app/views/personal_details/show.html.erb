@@ -1,0 +1,79 @@
+<p id="notice"><%= notice %></p>
+
+<% if @personal_detail %>
+    <div class="profile">
+      <div class="avatar">
+        <img src="<%= avatar %>" onerror="this.onerror=null; this.src='/images/male.png';">
+      </div>
+      <div class="details">
+        <div class="content">
+          <div class="name">
+            <span> <%= @personal_detail.name %> </span>
+          </div>
+          <div class="designation">
+            <span> Student @DTU </span>
+          </div>
+        </div>
+        <div class="profile_links">
+          <div id="edit_profile">
+            <%= link_to edit_personal_detail_path(@personal_detail) do %>
+              <%= image_tag('/images/edit.svg', height: '30', width: '70') %>
+            <% end %>
+          </div>
+          <div id="links">
+            <img src="/images/facebook.ico">
+            <img src="/images/github.png">
+            <img src="/images/linkedin.png">
+            <img src="/images/googleplus.ico">
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>
+      <strong>Name:</strong>
+      <%= @personal_detail.name %>
+    </p>
+
+    <p>
+      <strong>Email:</strong>
+      <%= current_user.email %>
+    </p>
+
+    <p>
+      <strong>User:</strong>
+      <%= @personal_detail.user_id %>
+    </p>
+
+    <p>
+      <strong>Dob:</strong>
+      <%= @personal_detail.dob %>
+    </p>
+
+    <p>
+      <strong>Phone:</strong>
+      <%= @personal_detail.phone %>
+    </p>
+
+    <p>
+      <strong>Address:</strong>
+      <%= @personal_detail.address %>
+    </p>
+
+    <p>
+      <strong>City:</strong>
+      <%= @personal_detail.city %>
+    </p>
+
+    <p>
+      <strong>Pin:</strong>
+      <%= @personal_detail.pin %>
+    </p>
+
+    <p>
+      <strong>Photo:</strong>
+      <%= @personal_detail.photo %>
+    </p>
+
+<% else %>
+  <%= link_to 'Create Profile', new_personal_detail_path %>
+<% end %>
