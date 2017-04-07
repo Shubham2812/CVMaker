@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :personal_details
+  
   get '/' => 'home#index'
   get '/profile' => 'home#profile'
   get 'home/index'
@@ -12,7 +12,11 @@ Rails.application.routes.draw do
   post '/profile/education/add' => 'home#add_education'
   post '/profile/skill/add' => 'home#add_skill'
   post '/profile/about/add' => 'home#add_about'
-  
+  get '/profile/edit' => 'home#edit' 
+  post '/profile/edit/confirm' => 'home#confirm_edit'
+  post '/profile/edit/delete' => 'home#delete'
+
+  resources :personal_details
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

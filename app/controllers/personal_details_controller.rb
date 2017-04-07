@@ -26,14 +26,15 @@ class PersonalDetailsController < ApplicationController
   def create
     @personal_detail = PersonalDetail.new(personal_detail_params)
     @personal_detail.user_id = current_user.id
-    filename = params[:personal_detail][:photo].original_filename
-    file = @personal_detail.user_id.to_s + "_" + filename
-    temp_file = params[:personal_detail][:photo]
-    @personal_detail.photo = filename
-    File.open(Rails.root.join('public', 'uploads', 'users', file), 'wb') do |f|
-        f.write(temp_file.read)
+    if(params[:personal_detail][:photo])
+      filename = params[:personal_detail][:photo].original_filename
+      file = @personal_detail.user_id.to_s + "_" + filename
+      temp_file = params[:personal_detail][:photo]
+      @personal_detail.photo = filename
+      File.open(Rails.root.join('public', 'uploads', 'users', file), 'wb') do |f|
+          f.write(temp_file.read)
+      end
     end
-
     respond_to do |format|
       if @personal_detail.save
         format.html { redirect_to @personal_detail, notice: 'Personal detail was successfully created.' }
@@ -50,20 +51,22 @@ class PersonalDetailsController < ApplicationController
   def update
     respond_to do |format|
       if @personal_detail.update(personal_detail_params)
-        filename = params[:personal_detail][:photo].original_filename
-        file = @personal_detail.user_id.to_s + "_" + filename
-        old_file = @personal_detail.user_id.to_s + "_" + @personal_detail.photo
-        temp_file = params[:personal_detail][:photo]
-        @personal_detail.photo = filename
-        @personal_detail.save
-        if(@personal_detail.photo)
-          File.delete(Rails.root.join('public', 'uploads', 'users', old_file))
-        end
+        if(params[:personal_detail][:photo])
+          filename = params[:personal_detail][:photo].original_filename
+          file = @personal_detail.user_id.to_s + "_" + filename
+          old_file = @personal_detail.user_id.to_s + "_" + @personal_detail.photo
+          temp_file = params[:personal_detail][:photo]
+          @personal_detail.photo = filename
+          
+          if(@personal_detail.photo)
+            File.delete(Rails.root.join('public', 'uploads', 'users', old_file))
+          end
 
-        File.open(Rails.root.join('public', 'uploads', 'users', file), 'wb') do |f|
-          f.write(temp_file.read)
+          File.open(Rails.root.join('public', 'uploads', 'users', file), 'wb') do |f|
+            f.write(temp_file.read)
+          end
         end
-        
+        @personal_detail.save
         format.html { redirect_to @personal_detail, notice: 'Personal detail was successfully updated.' }
         format.json { render :show, status: :ok, location: @personal_detail }
       else

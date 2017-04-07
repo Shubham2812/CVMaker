@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Profile </title>
+</head>
+<body>
+		<form action="/profile/edit/confirm" method="post">
+      <div class="profile_container">
+        <div class="profile">
+          <div class="avatar">
+            <img src="<%= avatar %>" onerror="this.onerror=null; this.src='/images/male.png';">
+          </div>
+          <div class="details">
+            <div class="content">
+              <div class="name">
+                <span> <%= @personal_detail.name %> </span>
+              </div>
+              <div class="designation">
+                <span> Student @DTU </span>
+              </div>
+            </div>
+            <div class="profile_links">
+              <div id="edit_profile">
+                <input type="image" src="/images/save.jpg" value="Save" style="height: 50px; width: 50px;" >
+                <%= link_to '/profile', id: "cancel" do %>
+                    <%= image_tag('/images/cancel.png', height: '40', width: '40') %>
+                <% end %>
+              </div>
+              <div id="links">
+                <a href="<%= getLink('facebook') %>"> <img src="/images/facebook.ico" style="height: 30px; width: 30px;"> </a>
+                <a href="<%= getLink('github') %>"> <img src="/images/github.png" style="height: 30px; width: 30px;"> </a>
+                <a href="<%= getLink('linkedin') %>"> <img src="/images/linkedin.png" style="height: 30px; width: 30px;"> </a>
+                <a href="<%= getLink('googleplus') %>"> <img src="/images/googleplus.ico" style="height: 30px; width: 30px;"> </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content_container">
+        <div class="main_content">
+          <section>
+            <div class="info">
+              <div class="info_head">
+                <span class="section_heading"> Personal Information </span>
+                <img id="info_head_image" src="/images/add.png">
+              </div>
+              <div class="info_content">
+                <div>
+                  <span> Name: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="text" name="name" value="<%= @personal_detail.name %>">
+                  <!-- <img src="/images/delete.jpg" style="height: 20px; width: 25px"> -->
+                </div>
+
+                <div>
+                  <span> Email: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="text" name="email" value="<%= current_user.email %>">
+                  <!-- <img src="/images/delete.jpg" style="height: 20px; width: 25px"> -->
+                </div>
+
+                <div>
+                  <span> DOB: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="date" name="dob" value="<%= @personal_detail.dob %>">
+                  <!-- <img src="/images/delete.jpg" style="height: 20px; width: 25px"> -->
+                </div>
+
+                <div>
+                  <span> Phone: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="text" name="phone" value="<%= @personal_detail.phone %>">
+                  <!-- <img src="/images/delete.jpg" style="height: 20px; width: 25px"> -->
+                </div>
+
+                <div>
+                  <span> Address: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="text" name="address" value="<%= @personal_detail.address %>">
+                  <!-- <img src="/images/delete.jpg" style="height: 20px; width: 25px"> -->
+                </div>
+
+                <div>
+                  <span> City: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="text" name="city" value="<%= @personal_detail.city %>">
+                  <!-- <img src="/images/delete.jpg" style="height: 20px; width: 25px"> -->
+                </div>
+
+                <div>
+                  <span> PIN: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <input type="text" name="pin" value="<%= @personal_detail.pin %>">
+                  <!-- <img src="/images/delete.jpg" style="height: 20px; width: 25px"> -->
+                </div>
+
+              </div>
+            </div>
+          </section>
+          <section>
+            <div class="about">
+              <div class="about_head">
+                <span class="section_heading"> About </span>
+                <img id="about_head_image" src="/images/add.png">
+              </div>
+              <div class="about_content">
+                
+                <ol id="about_content_list">
+                  
+                  <% @about.each do |about| %>
+                      <div>
+                        <input type="text" name="about_field_<%= about.id %>" value="<%= about.field %>">
+                        <input type="text" name="about_value_<%= about.id %>" value="<%= about.value %>">
+                        <a class="delete" id="about_field_<%= about.id %>"> <img src="/images/delete.jpg" style="height: 20px; width: 25px"> </a>
+                      </div>
+                  <% end %>
+
+                </ol>
+                <br>
+                <div class="about_form">
+                  <input id="about_content_field" type="text" name="field" placeholder="Field">
+                  <input id="about_content_value" type="text" name="value" placeholder="Value">
+                  <input id="about_content_submit" type="submit" name="submit" value="Add">
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="education">
+              <div class="education_head">
+                <span class="section_heading"> Education </span>
+                <img id="education_head_image" src="/images/add.png">
+              </div>
+              <div class="education_container">
+                <div class="class_10">
+                  <div class="class_10_head">
+                    <span> Class 10 </span>
+                    <img id="class_10_head_image" src="/images/add.png">
+                  </div>
+                  <div class="class_10_content">
+                    <ol id="class_10_content_list">
+                     <% @class_10.each do |c10| %>
+                        <div>
+                          <input type="text" name="class_10_field_<%= c10.id %>" value="<%= c10.field %>">
+                          <input type="text" name="class_10_value_<%= c10.id %>" value="<%= c10.value %>"> 
+                          <a class="delete" id="education_field_<%= c10.id %>"> <img src="/images/delete.jpg" style="height: 20px; width: 25px"> </a>
+                        </div>
+                      <% end %>
+                    </ol>
+                    <br>
+                    <div class="class_10_form">
+                      <input id="class_10_content_field" type="text" name="field" placeholder="Field">
+                      <input id="class_10_content_value" type="text" name="value" placeholder="Value">
+                      <input id="class_10_content_submit" type="submit" name="submit" value="Add">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="class_12">
+                  <div class="class_12_head">
+                    <span> Class 12 </span>
+                    <img id="class_12_head_image" src="/images/add.png">
+                  </div>
+                  <div class="class_12_content">
+                    <ol id="class_12_content_list">
+                    <% i = 1 %>
+                      <% @class_12.each do |c12| %>
+                        <div>
+                          <input type="text" name="class_12_field_<%= c12.id %>" value="<%= c12.field %>">
+                          <input type="text" name="class_12_value_<%= c12.id %>" value="<%= c12.value %>"> 
+                          <a class="delete" id="education_field_<%= c12.id %>"> <img src="/images/delete.jpg" style="height: 20px; width: 25px"> </a>
+                        </div>
+                          <% i = i + 1 %>
+                      <% end %>
+                    </ol>
+                    <br>
+                    <div class="class_12_form">
+                      <input id="class_12_content_field" type="text" name="field" placeholder="Field">
+                      <input id="class_12_content_value" type="text" name="value" placeholder="Value">
+                      <input id="class_12_content_submit" type="submit" name="submit" value="Add">
+                    </div>
+                  </div>
+                </div>
+                <div class="college">
+                  <div class="college_head">
+                    <span> College </span>
+                    <img id="college_head_image" src="/images/add.png">
+                  </div>
+                  <div class="college_content">
+                    <ol id="college_content_list">
+                      <% @college.each do |college| %>
+                        <div>
+                          <input type="text" name="college_field_<%= college.id %>" value="<%= college.field %>">
+                          <input type="text" name="college_value_<%= college.id %>" value="<%= college.value %>">
+                          <a class="delete" id="education_field_<%= college.id %>"> <img src="/images/delete.jpg" style="height: 20px; width: 25px"> </a>
+                        </div>
+                      <% end %>
+                    </ol>
+                    <br>
+                    <div class="college_form">
+                      <input id="college_content_field" type="text" name="field" placeholder="Field">
+                      <input id="college_content_value" type="text" name="value" placeholder="Value">
+                      <input id="college_content_submit" type="submit" name="submit" value="Add">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="education_other_content">  
+                  <ol id="education_other_content_list">    
+                    <% @education.each do |education| %>
+                        <div>
+                          <input type="text" name="education_other_field_<%= education.id %>" value="<%= education.field %>">
+                          <input type="text" name="education_other_value_<%= education.id %>" value="<%= education.value %>">
+                          <a class="delete" id="education_field_<%= education.id %>"> <img src="/images/delete.jpg" style="height: 20px; width: 25px"> </a>
+                        </div>
+                    <% end %>
+                  </ol>
+                  <br>
+                  <div class="education_other_form">
+                    <input id="education_other_content_field" type="text" name="field" placeholder="Field">
+                    <input id="education_other_content_value" type="text" name="value" placeholder="Value">
+                    <input id="education_other_content_submit" type="submit" name="submit" value="Add">
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="skills">
+              <div class="skills_head">
+                <span class="section_heading"> Skills </span>
+                <img id="skills_head_image" src="/images/add.png">
+              </div>
+              <div class="skills_content">
+                <ol id="skills_content_list">
+                  <% @skills.each do |skill| %>
+                    <div>
+                        <input type="text" name="skills_field_<%= skill.id %>" value="<%= skill.field %>">
+                        <input type="text" name="skills_value_<%= skill.id %>" value="<%= skill.value %>">
+                        <a class="delete" id="skills_field_<%= skill.id %>"> <img src="/images/delete.jpg" style="height: 20px; width: 25px"> </a>
+                    </div>
+                  <% end %>
+                </ol>
+                <br>
+                <div class="skills_form">
+                  <input id="skills_content_field" type="text" name="field" placeholder="Field">
+                  <input id="skills_content_value" type="text" name="value" placeholder="Value">
+                  <input id="skills_content_submit" type="submit" name="submit" value="Add">
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="external_links">
+              <div class="external_links_head">
+                <span class="section_heading"> Links </span>
+                <img id="external_links_head_image" src="/images/add.png">
+              </div>
+              <div class="external_links_content">
+                <ol id="external_links_content_list">
+                  <% @links.each do |link| %>
+                    <div>
+                        <input type="text" name="links_field_<%= link.id %>" value="<%= link.field %>">
+                        <input type="text" name="links_value_<%= link.id %>" value="<%= link.value %>">
+                        <a class="delete" id="links_field_<%= link.id %>"> <img src="/images/delete.jpg" style="height: 20px; width: 25px"> </a>
+                    </div>
+                  <% end %>
+                </ol>
+                <br>
+                <div class="external_links_form">
+                  <input id="external_links_content_field" type="text" name="field" placeholder="Field">
+                  <input id="external_links_content_value" type="text" name="value" placeholder="Value">
+                  <input id="external_links_content_submit" type="submit" name="submit" value="Add">  
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </form>
+</body>
+</html>

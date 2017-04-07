@@ -22,7 +22,7 @@
 		        </div>
 		        <div class="profile_links">
 		          <div id="edit_profile">
-		            <%= link_to edit_personal_detail_path(@personal_detail) do %>
+		            <%= link_to '/profile/edit', id: "edit" do %>
 		              <%= image_tag('/images/edit.svg', height: '30', width: '70') %>
 		            <% end %>
 		          </div>
@@ -38,59 +38,62 @@
 		</div>
 		<div class="content_container">
 			<div class="main_content">
-					    <p>
-					      <strong>Name:</strong>
-					      <%= @personal_detail.name %>
-					    </p>
+					<section>
+							<div class="info">
+								<div class="info_head">
+									<span class="section_heading"> Personal Information </span>
+									</div> 
+							    <div class="info_content">
+							    	<div>
+								    <span> Name: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								    <span> <%= @personal_detail.name %> </span>
+								    </div>
 
-					    <p>
-					      <strong>Email:</strong>
-					      <%= current_user.email %>
-					    </p>
+								    <div>
+								    <span> Email: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								    <span> <%= current_user.email %> </span>
+									</div>
 
-					    <p>
-					      <strong>Dob:</strong>
-					      <%= @personal_detail.dob %>
-					    </p>
+									<div>
+									<span> DOB: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								    <span> <%= @personal_detail.dob %> </span>
+								    </div>
 
-					    <p>
-					      <strong>Phone:</strong>
-					      <%= @personal_detail.phone %>
-					    </p>
+									<div>
+									<span> Phone: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								    <span> <%= @personal_detail.phone %> </span>
+								    </div>
 
-					    <p>
-					      <strong>Address:</strong>
-					      <%= @personal_detail.address %>
-					    </p>
+								    <div>
+								    <span> Address: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								    <span> <%= @personal_detail.address %> </span>
+								    </div>
 
-					    <p>
-					      <strong>City:</strong>
-					      <%= @personal_detail.city %>
-					    </p>
+								    <div>
+									<span> City: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								    <span> <%= @personal_detail.city %> </span>
+								    </div>
 
-					    <p>
-					      <strong>Pin:</strong>
-					      <%= @personal_detail.pin %>
-					    </p>
+									<div>
+									<span> PIN: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								    <span> <%= @personal_detail.pin %> </span>
+								    </div>
 
-					<% else %>
-				  		<%= link_to 'Create Profile', new_personal_detail_path %>
-					<% end %>
-
+								</div>
+							</div>
+					</section>
 					<section>
 						<div class="about">
 							<div class="about_head">
 								<span class="section_heading"> About </span>
-								<img id="about_head_image" src="/images/add.png">
-							</div>
+								</div>
 							<div class="about_content">
-								<input id="about_content_field" type="text" name="field" placeholder="Field">
-								<input id="about_content_value" type="text" name="value" placeholder="Value">
-								<input id="about_content_submit" type="submit" name="submit" value="Add">
 								<ol id="about_content_list"> 
 									<% @about.each do |about| %>
-										<%= about.field %>
-										<%= about.value %> <br>
+										<div>
+										    <span> <%= about.field %>: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										    <span> <%= about.value %> </span>
+										</div>
 									<% end %>
 								</ol>
 							</div>
@@ -102,53 +105,59 @@
 							<div class="education_head">
 								<span class="section_heading"> Education </span>
 							</div>
-							<div class="class_10">
-								<div class="class_10_head">
-									<span> Class 10 </span>
-									<img id="class_10_head_image" src="/images/add.png">	
+							<div class="education_container">
+								<div class="class_10">
+									<div class="class_10_head">
+										<span> Class 10 </span>
+										</div>
+									<div class="class_10_content">
+										<ol id="class_10_content_list"> 
+											<% @class_10.each do |c10| %>
+												<div>
+												    <span> <%= c10.field %>: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												    <span> <%= c10.value %> </span>
+												</div>
+											<% end %>
+										</ol>
+									</div>
 								</div>
-								<div class="class_10_content">
-									<input id="class_10_content_field" type="text" name="field" placeholder="Field">
-									<input id="class_10_content_value" type="text" name="value" placeholder="Value">
-									<input id="class_10_content_submit" type="submit" name="submit" value="Add">
-									<ol id="class_10_content_list"> 
-										<% @class_10.each do |c10| %>
-											<%= c10.field %>
-											<%= c10.value %> <br>
-										<% end %>
-									</ol>
+								<div class="class_12">
+									<div class="class_12_head">
+										<span> Class 12 </span>
+										</div>
+									<div class="class_12_content">
+										<ol id="class_12_content_list"> 
+											<% @class_12.each do |c12| %>
+												<div>
+												    <span> <%= c12.field %>: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												    <span> <%= c12.value %> </span>
+												</div>
+											<% end %>
+										</ol>
+									</div>
 								</div>
-							</div>
-							<div class="class_12">
-								<div class="class_12_head">
-									<span> Class 12 </span>
-									<img id="class_12_head_image" src="/images/add.png">	
+								<div class="college">
+									<div class="college_head">
+										<span> College </span>
+									</div>
+									<div class="college_content">
+										<ol id="college_content_list"> 
+											<% @college.each do |college| %>
+												<div>
+												    <span> <%= college.field %>: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+												    <span> <%= college.value %> </span>
+												</div>
+											<% end %>
+										</ol>
+									</div>
 								</div>
-								<div class="class_12_content">
-									<input id="class_12_content_field" type="text" name="field" placeholder="Field">
-									<input id="class_12_content_value" type="text" name="value" placeholder="Value">
-									<input id="class_12_content_submit" type="submit" name="submit" value="Add">
-									<ol id="class_12_content_list"> 
-										<% @class_12.each do |c12| %>
-											<%= c12.field %>
-											<%= c12.value %> <br>
-										<% end %>
-									</ol>
-								</div>
-							</div>
-							<div class="college">
-								<div class="college_head">
-									<span> College </span>
-									<img id="college_head_image" src="/images/add.png">	
-								</div>
-								<div class="college_content">
-									<input id="college_content_field" type="text" name="field" placeholder="Field">
-									<input id="college_content_value" type="text" name="value" placeholder="Value">
-									<input id="college_content_submit" type="submit" name="submit" value="Add">
-									<ol id="college_content_list"> 
-										<% @college.each do |college| %>
-											<%= college.field %>
-											<%= college.value %> <br>
+								<div class="education_other_content">
+									<ol id="education_other_content_list"> 
+										<% @education.each do |education| %>
+											<div>
+											    <span> <%= education.field %>: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											    <span> <%= education.value %> </span>
+											</div>
 										<% end %>
 									</ol>
 								</div>
@@ -160,16 +169,14 @@
 						<div class="skills">
 							<div class="skills_head">
 								<span class="section_heading"> Skills </span>
-								<img id="skills_head_image" src="/images/add.png">
-							</div>
+								</div>
 							<div class="skills_content">
-								<input id="skills_content_field" type="text" name="field" placeholder="Field">
-								<input id="skills_content_value" type="text" name="value" placeholder="Value">
-								<input id="skills_content_submit" type="submit" name="submit" value="Add">
 								<ol id="skills_content_list"> 
 									<% @skills.each do |skill| %>
-										<%= skill.field %>
-										<%= skill.value %> <br>
+										<div>
+											<span> <%= skill.field %>: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+											<span> <%= skill.value %> </span>
+										</div>
 									<% end %>
 								</ol>
 							</div>
@@ -180,16 +187,14 @@
 						<div class="external_links">
 							<div class="external_links_head">
 								<span class="section_heading"> Links </span>
-								<img id="external_links_head_image" src="/images/add.png">
-							</div>
+								</div>
 							<div class="external_links_content">
-								<input id="external_links_content_field" type="text" name="field" placeholder="Field">
-								<input id="external_links_content_value" type="text" name="value" placeholder="Value">
-								<input id="external_links_content_submit" type="submit" name="submit" value="Add">
 								<ol id="external_links_content_list"> 
 									<% @links.each do |link| %>
-										<%= link.field %>
-										<%= link.value %> <br>
+										<div>
+											<span> <%= link.field %>: </span> 
+											<span> <%= link.value %> </span>
+										</div>
 									<% end %>
 								</ol>
 							</div>
@@ -197,5 +202,8 @@
 					</section>
 			</div>
 		</div>
+	<% else %>
+		<%= link_to 'Create Profile', new_personal_detail_path %>
+	<% end %>
 </body>
 </html>
