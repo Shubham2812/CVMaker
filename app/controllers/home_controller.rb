@@ -158,4 +158,8 @@ class HomeController < ApplicationController
   	render json: about
   end
 
+  def sample
+    render 'darinsmalls.html', layout: false 
+  end
+
 end

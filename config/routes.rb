@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/profile/edit' => 'home#edit' 
   post '/profile/edit/confirm' => 'home#confirm_edit'
   post '/profile/edit/delete' => 'home#delete'
+  get '/sample' => 'home#sample'
 
   resources :personal_details
   # The priority is based upon order of creation: first created -> highest priority.
