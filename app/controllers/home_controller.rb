@@ -157,8 +157,12 @@ class HomeController < ApplicationController
   	render json: about
   end
 
-  def sample
+  def sample1
     render 'darinsmalls.html', layout: false 
+  end
+
+  def sample2
+    render 'vaibhav.html', layout: false 
   end
 
 end
