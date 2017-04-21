@@ -43,6 +43,9 @@ Devise.setup do |config|
   # The same considerations mentioned for authentication_keys also apply to request_keys.
   # config.request_keys = []
 
+  require "omniauth-facebook"
+  config.omniauth :facebook, "655299974654812", "b38e0f3557e559352cd5b48978b72321", scope: 'email,public_profile', info_fields: 'email,name'
+
   # Configure which authentication keys should be case-insensitive.
   # These keys will be downcased upon creating or modifying a user and when used
   # to authenticate or find a user. Default is :email.

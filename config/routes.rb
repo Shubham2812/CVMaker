@@ -4,8 +4,6 @@ Rails.application.routes.draw do
   get '/profile' => 'home#profile'
   get 'home/index'
 
-  devise_for :users
-
   get '/' => 'home#index'
   get '/profile' => 'home#profile'
   post '/profile/links/add' => 'home#add_link'
@@ -18,6 +16,9 @@ Rails.application.routes.draw do
   get '/sample' => 'home#sample'
 
   resources :personal_details
+
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

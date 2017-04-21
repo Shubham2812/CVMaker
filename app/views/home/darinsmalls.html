@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Darin Smalls</title>
+	<title> Sample </title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style type="text/css">
-		*{
-			font-family: verdana;
-			margin:0;
-			padding: 0;
-		
 
+		*{
+			margin: 0;
+			padding: 0;
 		}
 
-		body {
-		
+		.ds_body{
 			background-color: #fff;
+	   	}
 
-
-	   		}
-
-	   	.header{
+	   	.ds_header{
 
 	   		height: 40px;
 	   		width:100%;
@@ -58,7 +53,7 @@
 		    color:#ffffff;
 		    margin-top: 10px;
 		    margin-left: 20px;
-			}
+		}
 
 		.topmostsection{
 			background-image: url("./images/jumpingmancropped.jpg");
@@ -152,9 +147,10 @@
 	
 		}
 	</style>
+
 </head>
-<body>
-	<div class="header" >
+<body class="ds_body">
+	<div class="ds_header">
 		<div class="headerleftpart" >
 			DARIN SMALLS
 		</div>
@@ -236,7 +232,7 @@
 
 </body>
 <script type="text/javascript">
-	el=document.getElementsByClassName('header');
+	el=document.getElementsByClassName('ds_header');
 	document.addEventListener("wheel",myFunction);
     var textel=el[0].getElementsByClassName("headerleftpart");
 
