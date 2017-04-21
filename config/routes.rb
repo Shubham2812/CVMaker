@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   get '/profile/edit' => 'home#edit' 
   post '/profile/edit/confirm' => 'home#confirm_edit'
   post '/profile/edit/delete' => 'home#delete'
-  get '/sample' => 'home#sample'
+  get '/sample1' => 'home#sample1'
+  get '/sample2' => 'home#sample2'
 
   resources :personal_details
 
