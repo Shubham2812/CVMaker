@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Resume</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
+	*{
+		font-family: sans-serif;
+		margin:0;
+		padding: 0;
+
+	}
+
+	body {
+	
+		background-color: whitesmoke;
+
+
+   		}
+
+   	.top{
+   		background-image: url("./images/intro-bg.jpg");
+   		background-size: cover;
+   		height: 800px;
+   	}
+   	.header{
+
+   		width:100%;
+   		background-color: #fff;
+		position:fixed;
+		top:0;
+		
+   	}
+
+   	.headerlinks {
+   		
+   		display: flex;
+		justify-content: space-around;
+
+   	}
+
+   	.headerlinks a{
+	text-decoration: none;
+	padding: 10px;
+	color: purple;
+	
+}
+
+.headerlinks a:visited{
+	text-decoration: none;
+	color: purple;
+}
+
+.headerlinks a:hover{
+	background-color: #555;
+	color: orange;
+}
+
+.center{
+	//width:50%;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	margin-top: 39px;
+	align-items: center;
+	background-color: #111111;
+	opacity: .85;
+
+}
+
+.innercenterdiv{
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+
+
+.centerpartlinks{
+	width:30%;
+}
+.centerpartlinksinnerdiv{
+	display: flex;
+	
+	justify-content: space-around;
+	//background-color: red;
+
+}
+
+.centerpartlinksinnerdiv a{
+	cursor: pointer;
+}
+
+#moreAboutMe{
+	color:white;
+	padding: 20px;
+	border:4px solid #cc005f;
+	margin-top:20px;
+	cursor: pointer;
+}
+
+#moreAboutMe a{
+	text-decoration: none;
+	color:white;
+}
+
+#about{
+	margin:60px;
+	display: flex;
+	justify-content: space-around; 
+
+}
+
+#profilepic{
+	
+	height: 200px;
+	width:200px;
+	border:1px solid grey;
+	border-radius:50%;
+	margin-right: 50px;
+}
+
+.profileAndSkillsAbout{
+	display: flex;
+	justify-content: space-around;
+	margin:100px;
+	//width:40%;
+}
+
+.progressbar{
+	width: 300px;
+  background-color: #ddd;
+  height:10px;
+  margin-top:4px;
+}
+
+li{
+	padding-top: 20px;
+	list-style: none;
+	font-family: sans-serif;
+}
+
+#hireMe{
+	color:white;
+	padding: 20px;
+	border:4px solid #cc005f; 
+	//margin-top:20px;
+	cursor: pointer;
+	width:10%;
+	
+	margin: 10px  auto 10px 550px;
+}
+
+#hireMe a{
+	text-decoration: none;
+	color:black;
+
+}
+
+#hireMe a:hover{
+	
+	color:#cc005f;
+	text-decoration: none;
+}
+
+.greysection{
+	background-color: #ebebeb;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 20px;
+}	
+
+.workExperience_box{
+	display: flex;
+	justify-content: space-around;
+	width:70%;
+}
+
+
+.workExperience_box_centerpart{
+	display: flex;
+	flex-direction: column;
+
+}
+
+.workExperience_box_centerpart_zerowidthdiv{
+	width:0px;
+	border:1px solid red;
+}
+
+
+
+	
+
+	
+
+</style>	
+</head>
+
+<body>
+<div class="top">
+	<div class="header">
+
+		<div class="headerlinks">
+
+			<a href="#Education" id="header_headerlinks_education" contenteditable="true">Education</a>
+			<a href="#Skills" id="header_headerlinks_skills" contenteditable="true">Skills</a>
+			<a href="#Experience" id="header_headerlinks_experience" contenteditable="true">Experience</a>
+			<a href="#AdditionalInfo"  id="header_headerlinks_additionalinfo" contenteditable="true">Additional Info</a>
+			<a href="#SocietiesJoined"  id="header_headerlinks_societiesjoined" contenteditable="true">Societies Joined</a>
+			<a href="#ContactInfo"  id="header_headerlinks_contactinfo" contenteditable="true">Contact Info</a>
+			
+
+		</div>
+		
+	</div>
+		<div class="center"> 
+			<div class="innercenterdiv">
+				<h5 id="salutationline" style="color:#cc005f; font-size:40px" contenteditable="true">HELLO,YOU .</h5>
+				<h1 id="nameofperson" style="font-size: 84px;color: white" contenteditable="true" onmouseleave ="displayOutput()">I'm <em>Donald Trump</em> .</h1>
+				<br>
+				<span id="nameofperson_categories" contenteditable="true" style="font-size: 20px;font-weight: bold;color: white">|<em> Web Developer </em>|<em> Android Developer </em>|</span>
+				<div id="moreAboutMe">
+					<a href="#aboutme" ><span style="font-size: x-large;"><em>More About Me </em><i class="fa fa-angle-double-down" aria-hidden="true"></i></span> </a>
+				</div> 
+
+			</div>
+			<div class="centerpartlinks">
+					<div class="centerpartlinksinnerdiv">
+						<a href="" id="fbicon" ondblclick="fblinkchange()" ><i class="fa fa-facebook-square" aria-hidden="true" style="font-size:40px;"></i></a><br>
+						<a href="" id="twittericon" ondblclick="twitterlinkchange()"><i class="fa fa-twitter" aria-hidden="true" style="font-size:40px;"></i></a><br>
+						<a href="" id="githubicon" ondblclick="githublinkchange()"><i class="fa fa-github" aria-hidden="true" style="font-size:40px;"></i></a><br>
+						<a href="" id="linkedinicon" ondblclick="linkedinlinkchange()"><i class="fa fa-linkedin-square" aria-hidden="true" style="font-size:40px;"></i></a>
+						
+					</div>	
+			</div>
+		</div>	
+</div>
+<br>
+<center><h2 id="aboutme" contenteditable="true" style="font-family: sans-serif;"><em>About Me</em></h2></center>
+<div id="about">
+
+<img id="profilepic" src="./images/trump.jpg"  ondblclick="profilepicchange()">
+<p id="aboutme_content" contenteditable="true">I am the president of united states.I am very bad president.Lorem ipsum dolor sit amet, consectetur adipiscing elit. In orci arcu, elementum at est et, pulvinar tincidunt erat. Cras mollis ultrices tellus. Aenean volutpat vulputate vulputate. Donec nulla nulla, volutpat lobortis condimentum vel, bibendum vitae massa. Mauris dapibus aliquet malesuada. Duis finibus facilisis odio et lacinia. Donec lobortis velit et magna vehicula lobortis. Duis dignissim, enim et sagittis hendrerit, leo arcu accumsan massa, vel gravida dolor ipsum quis metus. Mauris laoreet commodo dolor eget viverra.
+
+In tristique ligula ut urna commodo, sed interdum odio lacinia. Quisque mollis et metus at fermentum. Fusce imperdiet magna eget sodales faucibus. Phasellus quis rhoncus nunc. Suspendisse consequat urna eros, sit amet facilisis mauris rhoncus non. Aliquam id interdum justo. Nullam sem ligula, elementum ac libero consectetur, tincidunt vulputate quam. Donec cursus purus molestie dui lacinia, sed efficitur elit posuere. Pellentesque volutpat odio ante, in lobortis purus eleifend at. Quisque in ex efficitur, molestie arcu at, blandit nunc. Quisque dapibus mollis nisl, et efficitur odio porttitor sed. Duis ac justo et odio mattis ultricies non vitae ipsum. Morbi pretium tempus purus, quis placerat massa convallis nec. Aliquam dolor mauris, vestibulum vitae ullamcorper feugiat, sollicitudin vel nibh. Nam semper in magna ac imperdiet.
+</p>
+</div>
+
+<div class="profileAndSkillsAbout">
+	<div style="display: flex;justify-content: space-around;">
+
+		<div class="profile" style="margin-right: 40px;">
+			<h3 id="profileAndSkillsAbout_profileheading" style="font-size: xx-large;" contenteditable="true">PROFILE</h3><br>
+			<ul class="info-list">
+	   				<li>
+	   					<strong id="profileFieldLi1" contenteditable="true">Fullname:</strong>
+	   					<span id="profileValueLi1" contenteditable="true">Donald Trump</span>
+	   				</li>
+	   				<li>
+	   					<strong id="profileFieldLi2" contenteditable="true">Birth Date:</strong>
+	   					<span  id="profileValueLi2" contenteditable="true">Feb 29,1947</span>
+	   				</li>
+	   				<li>
+	   					<strong id="profileFieldLi3" contenteditable="true">Job:</strong>
+	   					<span  id="profileValueLi3" contenteditable="true">Android Developer </span>
+	   				</li>
+	   				<li>
+	   					<strong id="profileFieldLi4" contenteditable="true">Website:</strong>
+	   					<span id="profileValueLi4" contenteditable="true">https://donaldtrump.github.io/</span>
+	   				</li>
+	   				<li>
+	   					<strong id="profileFieldLi5" contenteditable="true">Email:</strong>
+	   					<span id="profileValueLi5" contenteditable="true">donaldtrump445@gmail.com</span>
+	   				</li>
+
+	   			</ul>
+
+		</div>
+
+		<div class="skills" style="margin-left:40px ">
+		<h3 id="profileAndSkillsAbout_skillsheading" style="font-size: xx-large;" contenteditable="true">SKILLS</h3><br>
+		<ul class="skill-bars">
+
+			<li>
+				<div style="width:300px">
+				<div id="progressbar1_outerdiv" style="width: 90%;display:flex;justify-content: space-between;">
+				<strong id="skill1" contenteditable="true">HTML5</strong>
+				<span id="percentage1" style="border-radius: 30%;border:2px solid #313131;font-size:14px;" contenteditable="true" onmouseleave ="percentage1change()">90%</span>
+				</div>
+				</div>
+				
+				<div class="progressbar">
+			   	<div id="progressbar1" style="width:90%;height:100%; background-color: #313131;"></div>
+			   	</div>
+			</li>
+			
+			<li>
+			<div style="width:300px">
+			<div id="progressbar2_outerdiv" style="width: 85%;display:flex;justify-content: space-between;">
+				<strong id="skill2" contenteditable="true">CSS3</strong>
+				<span id="percentage2" style="border-radius: 30%;border:2px solid #313131;font-size:14px;" contenteditable="true" onmouseleave ="percentage2change()">85%</span>
+			</div>
+			</div>
+			
+				<div class="progressbar">
+			   	<div id="progressbar2" style="width: 85%;height:100%;background-color: #313131;"></div>
+			   	</div>
+			  	
+	   	    </li>
+					   
+			<li>
+				<div style="width:300px">
+				<div id="progressbar3_outerdiv" style="width: 70%;display:flex;justify-content: space-between;">
+				<strong id="skill3" contenteditable="true">JQuery</strong>
+				<span  id="percentage3" style="border-radius: 30%;border:2px solid #313131;font-size:14px;" contenteditable="true" onmouseleave ="percentage3change()">70%</span>
+				</div>
+				</div>
+				
+			   	<div class="progressbar">
+				<div id="progressbar3" style="width: 70%;background-color: #313131;height:100%;"></div>
+				</div>
+				
+			</li>
+					   
+			<li>
+				<div style="width:300px">
+				<div id="progressbar4_outerdiv" style="width: 30%;display:flex;justify-content: space-between;">
+					<strong id="skill4" contenteditable="true">PHP</strong>
+				<span id="percentage4" style="border-radius: 30%;border:2px solid #313131;font-size:14px;" contenteditable="true" onmouseleave ="percentage4change()">30%</span>
+				</div>
+				
+				<div class="progressbar">
+				<div id="progressbar4" style="width: 30%;background-color: #313131;height:100%;"></div>
+				</div>
+				</div>
+				
+			</li>
+					 
+		    <li>
+		    	<div style="width:300px">
+		    	<div id="progressbar5_outerdiv" style="width: 75%;display:flex;justify-content: space-between;">
+					<strong id="skill5" contenteditable="true">Wordpress</strong>
+					<span id="percentage5" style="border-radius: 30%;border:2px solid #313131;font-size:14px;" contenteditable="true" onmouseleave ="percentage5change()">75%</span>
+				</div>
+		    	
+		    	
+				<div class="progressbar">
+				<div id="progressbar5" style="width: 75%;background-color: #313131;height:100%;"></div>
+				</div>
+				</div>
+				
+			</li>
+	      
+		</ul>
+
+		</div>
+	</div>
+</div>
+
+<div id="hireMe">
+	<center><a href=""><span style="font-size: x-large;"><em>HIRE ME </em><i class="fa fa-angle-double-down" aria-hidden="true"></i></span> </a></center>
+</div> 
+
+<div class="greysection">
+<h2 style="color:#FF0077;font-size: xx-large;">Work Experience</h2>
+	<div class="workExperience_box">
+		<div class="workExperience_box_leftpart">
+						<h3>UI Designer</h3><br>
+			<p style="color:#888888" >July 2015</p>
+		</div> 
+
+		<div class="workExperience_box_centerpart">
+			<i class="fa fa-graduation-cap" aria-hidden="true" style="font-size:40px; color:red; "></i>
+			<div class="workExperience_box_centerpart_zerowidthdiv">
+
+			</div>
+		</div>
+
+		<div class="workExperience_box_rightpart">
+			<h3>Awesome Studio</h3><br>
+			
+		</div>
+	</div>
+</div>
+
+
+
+</body>
+<script type="text/javascript">
+var header_headerlinks_education=document.getElementById("header_headerlinks_education");	
+var header_headerlinks_skills=document.getElementById("header_headerlinks_skills");	
+var header_headerlinks_experience=document.getElementById("header_headerlinks_experience");	
+var header_headerlinks_additionalinfo=document.getElementById("header_headerlinks_additionalinfo");	
+var header_headerlinks_societiesjoined=document.getElementById("header_headerlinks_societiesjoined");	
+var header_headerlinks_contactinfo=document.getElementById("header_headerlinks_contactinfo");	
+var salutationline=document.getElementById("salutationline");
+var nameofperson_categories=document.getElementById("nameofperson_categories");
+var aboutme=document.getElementById("aboutme");
+var aboutme_content=document.getElementById("aboutme_content");
+var profileAndSkillsAbout_profileheading=document.getElementById("profileAndSkillsAbout_profileheading");
+var profileAndSkillsAbout_skillsheading=document.getElementById("profileAndSkillsAbout_skillsheading");
+var percentage1=document.getElementById("percentage1");
+var progressbar1=document.getElementById("progressbar1");
+
+var percentage2=document.getElementById("percentage2");
+var progressbar2=document.getElementById("progressbar2");
+
+var percentage3=document.getElementById("percentage3");
+var progressbar3=document.getElementById("progressbar3");
+
+var percentage4=document.getElementById("percentage4");
+var progressbar4=document.getElementById("progressbar4");
+
+var percentage5=document.getElementById("percentage5");
+var progressbar5=document.getElementById("progressbar5");
+
+var profileValueLi1=document.getElementById("profileValueLi1");
+var profileFieldLi1=document.getElementById("profileFieldLi1");
+
+var profileValueLi2=document.getElementById("profileValueLi2");
+var profileFieldLi2=document.getElementById("profileFieldLi2");
+
+var profileValueLi3=document.getElementById("profileValueLi3");
+var profileFieldLi3=document.getElementById("profileFieldLi3");
+
+var profileValueLi4=document.getElementById("profileValueLi4");
+var profileFieldLi4=document.getElementById("profileFieldLi4");
+
+var profileValueLi5=document.getElementById("profileValueLi5");
+var profileFieldLi5=document.getElementById("profileFieldLi5");
+
+	function displayOutput() {
+            console.log("hello");
+            var input = document.getElementById("nameofperson").innerHTML;
+            console.log(header_headerlinks_education.innerHTML);
+            console.log("input:"+input);
+            if (input.length === 0) {
+                console.log("input0");
+                alert("Please enter a valid input");
+                return;
+            }
+		}
+
+	function fblinkchange(){
+		var fblink=prompt("Enter link to your fb profile:","https://www.fb.com");
+		document.getElementById("fbicon").href=fblink;
+
+        
+	}
+	
+
+
+	function twitterlinkchange(){
+		var twitterlink=prompt("Enter link to your fb profile:","https://www.twitter.com");
+		document.getElementById("twittericon").href=twitterlink;   
+	}
+
+
+	function githublinkchange(){
+		var githublink=prompt("Enter link to your fb profile:","https://www.github.com");
+		document.getElementById("githubicon").href=githublink;
+
+        
+	}
+
+
+	function linkedinlinkchange(){
+		var linkedinlink=prompt("Enter link to your fb profile:","https://www.linkedin.com");
+		document.getElementById("linkedinicon").href=linkedinlink;
+
+        
+	}
+function profilepicchange(){
+	var profilepicchange=prompt("Enter link src of image :","./images/trump.jpg");
+	if(profilepicchange==null)
+		profilepicchange="./images/trump.jpg";
+	document.getElementById("profilepic").src=profilepicchange;
+}
+
+function percentage1change(){
+	document.getElementById("progressbar1_outerdiv").style.width=percentage1.innerHTML;
+	progressbar1.style.width=percentage1.innerHTML;
+}
+
+function percentage2change(){
+	document.getElementById("progressbar2_outerdiv").style.width=percentage2.innerHTML;
+	progressbar2.style.width=percentage2.innerHTML;
+}
+
+function percentage3change(){
+	document.getElementById("progressbar3_outerdiv").style.width=percentage3.innerHTML;
+	progressbar3.style.width=percentage3.innerHTML;
+}
+
+function percentage4change(){
+	document.getElementById("progressbar4_outerdiv").style.width=percentage4.innerHTML;
+	progressbar4.style.width=percentage4.innerHTML;
+}
+
+function percentage5change(){
+	document.getElementById("progressbar5_outerdiv").style.width=percentage5.innerHTML;
+	progressbar5.style.width=percentage5.innerHTML;
+
+}
+</script>
+</html>
+
+
+
+
+

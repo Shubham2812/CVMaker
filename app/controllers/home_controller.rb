@@ -9,7 +9,6 @@ class HomeController < ApplicationController
   	@class_12 = Education.where(:user_id => current_user.id, :tag => 'class_12')
   	@college = Education.where(:user_id => current_user.id, :tag => 'college')
     @education = Education.where(:user_id => current_user.id, :tag => 'other')
-  	
     @skills = Skill.where(:user_id => current_user.id)
   	@about = About.where(:user_id => current_user.id)
 
