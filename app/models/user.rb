@@ -7,9 +7,13 @@ class User < ActiveRecord::Base
   devise :omniauthable, :omniauth_providers => [:facebook]
 
   def personal_detail
-    return PersonalDetail.find_by(user_id: current_user.id)
+    PersonalDetail.find_by(user_id: id)
   end
   
+  def skills
+    Skill.where(user_id: id)  
+  end
+
   def self.from_omniauth(auth)
 	  where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
 	    user.email = auth.info.email
@@ -29,6 +33,10 @@ class User < ActiveRecord::Base
         user.email = data["email"] if user.email.blank?
       end
     end
+  end
+
+  def name
+    personal_detail.name
   end
 
 

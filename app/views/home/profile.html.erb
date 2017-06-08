@@ -17,7 +17,7 @@
 		            <span> <%= @personal_detail.name %> </span>
 		          </div>
 		          <div class="designation">
-		            <span> Student @DTU </span>
+		            <span> <%= @personal_detail.designation %> </span>
 		          </div>
 		        </div>
 		        <div class="profile_links">
@@ -77,6 +77,14 @@
 									<div>
 									<span> PIN: </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								    <span> <%= @personal_detail.pin %> </span>
+								    </div>
+								    <div>
+									<span> Designation </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								    <span> <%= @personal_detail.designation %> </span>
+								    </div>
+								    <div>
+									<span> Description </span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								    <span> <%= @personal_detail.description %> </span>
 								    </div>
 
 								</div>

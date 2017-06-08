@@ -1,10 +1,9 @@
 Rails.application.routes.draw do
   
-  get '/' => 'home#index'
   get '/profile' => 'home#profile'
-  get 'home/index'
 
   get '/' => 'home#index'
+  get '/home' => 'home#index'  
   get '/profile' => 'home#profile'
   post '/profile/links/add' => 'home#add_link'
   post '/profile/education/add' => 'home#add_education'
@@ -15,7 +14,7 @@ Rails.application.routes.draw do
   post '/profile/edit/delete' => 'home#delete'
   get '/sample1' => 'home#sample1'
   get '/sample2' => 'home#sample2'
-
+  get '/templates' => 'home#templates'
   resources :personal_details
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

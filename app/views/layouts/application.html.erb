@@ -5,6 +5,8 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale = 1.0">
 </head>
 <body>
 
@@ -24,12 +26,11 @@
 
 	<% if user_signed_in? %>
 		<ul class="links">
-		  <li> <a href="/home/index"> Home </a> </li>
-		  <li> <a href="/profile"> Profile </a> </li>
-		  <li> <a href=""> Contact </a> </li>
+		  <li> <a href="/home"> Home </a> </li>
 		  <li> <a href=""> About </a> </li>
-		  <li> <a href="/sample1"> Sample1 </a> </li>
-		  <li> <a href="/sample2"> Sample2 </a> </li> 
+		  <li> <a href=""> Contact </a> </li>		  
+		  <li> <a href="/profile"> Profile </a> </li>
+		  <li> <a href="/templates"> Templates </a>  </li>
 		</ul>
 	<% end %>
 
@@ -41,6 +42,27 @@
 <% end %>
 
 <%= yield %>
+
+
+<div class="footer">
+  <div class="footer_upper">
+    <div class="footer_contact">
+        <span style="font-size: 16px;"> CONTACT </span> 
+        <div>   
+            <p><img src="/images/location.png" class="fa-fw w3-xlarge w3-margin-right"> Home : 3-E, Kamla Nagar, Delhi - 110007 </p>
+            <p><img src="/images/phone.png" class="fa-fw w3-xlarge w3-margin-right"> Phone : 9711301266 </p> 
+            <p><img src="/images/mail.png" class="fa-fw w3-xlarge w3-margin-right"> Email :  shubham.aggarwal.1996@gmail.com </p>
+          </div>
+      </div>  
+    <div class="footer_map">
+      <img src="/images/map_kamla_nagar.png">
+    </div>
+  </div>
+  <hr>
+  <div class="footer_lower">
+    <span style="font-size: 12px;"> Copyright © by CVmaker. All Rights Reserved</span>
+  </div>
+</div>
 
 </body>
 </html>

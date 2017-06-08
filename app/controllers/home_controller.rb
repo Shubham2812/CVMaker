@@ -90,6 +90,8 @@ class HomeController < ApplicationController
     personal_detail.phone = params[:phone]
     personal_detail.city = params[:city]
     personal_detail.pin = params[:pin]
+    personal_detail.designation = params[:designation]
+    personal_detail.description = params[:description]
     personal_detail.save
 
     return redirect_to '/profile'
@@ -157,12 +159,17 @@ class HomeController < ApplicationController
   	render json: about
   end
 
+  def templates
+  end
+  
   def sample1
     render 'darinsmalls.html', layout: false 
   end
 
   def sample2
-    render 'vaibhav.html', layout: false 
+    @personal_detail = current_user.personal_detail
+    @skills = current_user.skills
+    render 'vaibhav.html.erb', layout: false 
   end
 
 end
