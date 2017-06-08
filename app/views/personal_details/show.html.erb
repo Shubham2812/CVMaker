@@ -71,7 +71,9 @@
 
     <p>
       <strong>Designation:</strong>
-      <%= @personal_detail.designation %>
+      <%if @personal_detail.designation %>
+        <%= @personal_detail.designation %>
+      <%end%> 
     </p>
 
     <p>

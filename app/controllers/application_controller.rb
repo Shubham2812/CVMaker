@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   def avatar
   	personal_detail = PersonalDetail.where(:user_id => current_user.id).first
-    if personal_detail
+    if personal_detail && personal_detail.photo
   	 return "/uploads/users/" + personal_detail.user_id.to_s + "_" + personal_detail.photo
   	else
       return
